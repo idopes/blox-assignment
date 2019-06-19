@@ -1,0 +1,9 @@
+export const LOGIN = 'login';
+export const LOGOUT = 'logout';
+export const CHANGE_AUTH = 'change_auth';
+export const FETCH_USER = 'fetch_user';
+export const FETCH_USER_TOKENS = 'fetch_user_tokens';
+export const POST_USER_TOKENS = 'post_user_tokens';
+export const FETCH_ALL_TOKENS = 'fetch_all_tokens';
+export const FETCH_CHOSEN_TOKENS = 'fetch_chosen_tokens';
+export const FETCH_USER_TOKENS_INFO = 'fetch_user_tokens_info';

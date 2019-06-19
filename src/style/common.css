@@ -1,0 +1,21 @@
+body {
+  background-color: #0c2e63;
+  color: white;
+}
+
+.auth {
+  width: 25vw;
+  margin-top: 50px;
+}
+
+.input-field input:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+  color: white;
+  background-color: transparent !important;
+}
+
+.nav-wrapper li,
+.nav-wrapper .brand-logo {
+  padding: 0px 15px;
+}
