@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import requireAuth from '../requireAuth';
 import { connect } from 'react-redux';
 import { fetchAllTokens } from '../../services/tokensInfoService';
-import * as actions from '../../actions/userTokens';
 import TokensTable from '../TokensTable';
 
 class TokensPicker extends Component {
@@ -22,7 +21,7 @@ class TokensPicker extends Component {
       this.setState({tokens})
     })
   }
-  
+
   _tick = () => {
     this.setAllTokens()
   };
@@ -37,6 +36,5 @@ function mapStateToProps({ selectedTokens }) {
 }
 
 export default connect(
-  mapStateToProps,
-  actions
+  mapStateToProps
 )(requireAuth(TokensPicker));

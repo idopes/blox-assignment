@@ -17,23 +17,15 @@ export const fetchUserTokens = () => async dispatch => {
 
 export const postUserTokens = tokenId => async (dispatch,getState) => {
   const { selectedTokens } = getState();
-  let tokenIds = [];
-  if (selectedTokens.tokenIds.indexOf(tokenId) !== -1) {
-    tokenIds = selectedTokens.tokenIds.filter(
-      token => token !== tokenId
-    );
-  } else {
-    tokenIds = [...selectedTokens.tokenIds, tokenId];
-  }
+  const tokenIds = selectedArrayHelper(selectedTokens, tokenId)
   const res = await axios.post(
     'http://localhost:8888/user/tokens',
     JSON.stringify({ tokenIds }),
     header
   );
-  const body = reduceTokens(res.data.data)
   dispatch({
     type: POST_USER_TOKENS,
-    payload: body
+    payload: reduceTokens(res.data.data)
   });
 };
 
@@ -54,4 +46,16 @@ function reduceTokens(tokens) {
     acc.push(token.tokenId);
     return acc;
   }, []);
+}
+
+function selectedArrayHelper(selectedTokens, tokenId) {
+  let tokenIds = [];
+  if (selectedTokens.tokenIds.indexOf(tokenId) !== -1) {
+    tokenIds = selectedTokens.tokenIds.filter(
+      token => token !== tokenId
+    );
+  } else {
+    tokenIds = [...selectedTokens.tokenIds, tokenId];
+  }
+  return tokenIds;
 }

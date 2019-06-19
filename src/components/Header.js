@@ -12,14 +12,14 @@ const Header = ({logout, user}) => {
         </Link>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li>
-            <Link to="/">WatchList</Link>
+            <Link to="/"><button className='waves-effect waves-light btn'>WatchList</button></Link>
           </li>
           <li>
-            <Link to="/tokens">All Tokens</Link>
+            <Link to="/tokens"><button className='waves-effect waves-light btn'>All Tokens</button></Link>
           </li>
           {user ? (
             <li>
-              <button onClick={() => logout()}>log out</button>
+              <button className='waves-effect waves-light btn' onClick={() => logout()}>log out</button>
             </li>
           ) : (
             <></>

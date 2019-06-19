@@ -28,7 +28,7 @@ class Auth extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const { username, password } = this.state;
-    this.props.login('blox-user', 'blox-rocks');
+    this.props.login(username, password);
   }
 
   render() {
@@ -62,7 +62,7 @@ class Auth extends Component {
               </div>
             </div>
           </div>
-          <div>
+          <div className='center-align'>
             <button className="btn waves-effect waves-light">Sign in</button>
           </div>
         </form>

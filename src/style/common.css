@@ -3,6 +3,10 @@ body {
   color: white;
 }
 
+.center-align {
+  text-align: center;
+}
+
 .auth {
   width: 25vw;
   margin-top: 50px;
@@ -15,7 +19,15 @@ body {
   background-color: transparent !important;
 }
 
+.input-field input {
+  color: white;
+}
+
 .nav-wrapper li,
 .nav-wrapper .brand-logo {
   padding: 0px 15px;
+}
+
+.nav-wrapper li a {
+  padding: 0;
 }
